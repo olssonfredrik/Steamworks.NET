@@ -59,6 +59,16 @@ namespace Steamworks {
 			NativeMethods.SteamAPI_Shutdown();
 		}
 
+		public static void SetMiniDumpComment( string pchMsg ) {
+			InteropHelp.TestIfPlatformSupported();
+			NativeMethods.SteamAPI_SetMiniDumpComment( pchMsg );
+		}
+
+		public static void WriteMiniDump( uint uStructuredExceptionCode, System.IntPtr pvExceptionInfo, uint uBuildID ) {
+			InteropHelp.TestIfPlatformSupported();
+			NativeMethods.SteamAPI_WriteMiniDump( uStructuredExceptionCode, pvExceptionInfo, uBuildID );
+		}
+
 		//----------------------------------------------------------------------------------------------------------------------------------------------------------//
 		//	steam callback helper functions
 		//
